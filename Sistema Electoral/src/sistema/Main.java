@@ -46,9 +46,12 @@ public class Main {
 		//CANDIDATOS
 		Candidato MM = new Candidato("Mauricio Macri", "PRO", "Roba-Tutti");
 		Candidato CFK = new Candidato("Cristina Fernandez", "Frente Para la Victoria", "Vamo que ganamo");
+		Candidato VB = new VotoEnBlanco();
 		HashMap<Candidato, Integer> candidatos = new HashMap<Candidato,Integer>();
 		candidatos.put(MM, 0);
 		candidatos.put(CFK, 0);
+		candidatos.put(VB, 0);
+		
 		
 		//MESAS
 		Mesa m1 = new Mesa(1,candidatos,padron1);
@@ -88,12 +91,12 @@ public class Main {
 		
 		// A VOTAR!!
 		m1.Votar(a, CFK);
-		m1.Votar(b, CFK);
+		m1.Votar(b, VB);
 		m1.Votar(c, CFK);
 		m1.Votar(d, MM); //buuu
 		m2.Votar(e, CFK);
 		m2.Votar(f, CFK);
-		m3.Votar(g, CFK);
+		m3.Votar(g, VB);
 		m4.Votar(h, MM);//buuu
 		m4.Votar(i, CFK);
 		m4.Votar(j, MM);//buu
@@ -104,37 +107,58 @@ public class Main {
 		//A CONTAR!!!
 		//POR MESA:
 		
+		System.out.println("POR MESA CFK:");
 		System.out.println(m1.getVotosCandidato(CFK));
 		System.out.println(m2.getVotosCandidato(CFK));
 		System.out.println(m3.getVotosCandidato(CFK));
 		System.out.println(m4.getVotosCandidato(CFK));
 		System.out.println(m5.getVotosCandidato(CFK));
 		
+		System.out.println("POR MESA MLadronM:");
 		System.out.println(m1.getVotosCandidato(MM));
 		System.out.println(m2.getVotosCandidato(MM));
 		System.out.println(m3.getVotosCandidato(MM));
 		System.out.println(m4.getVotosCandidato(MM));
 		System.out.println(m5.getVotosCandidato(MM));
 		
+		System.out.println("POR MESA Voto en Blanco:");
+		System.out.println(m1.getVotosCandidato(VB));
+		System.out.println(m2.getVotosCandidato(VB));
+		System.out.println(m3.getVotosCandidato(VB));
+		System.out.println(m4.getVotosCandidato(VB));
+		System.out.println(m5.getVotosCandidato(VB));
+		
 		//POR ESCUELA:
+		System.out.println("POR ESCUELA CFK:");
 		System.out.println(esc1.getVotosCandidato(CFK));
 		System.out.println(esc2.getVotosCandidato(CFK));
 		System.out.println(esc3.getVotosCandidato(CFK));
 
+		System.out.println("POR ESCUELA MLadronM:");
 		System.out.println(esc1.getVotosCandidato(MM));
 		System.out.println(esc1.getVotosCandidato(MM));
 		System.out.println(esc1.getVotosCandidato(MM));
+		
+		System.out.println("POR ESCUELA Voto en Blanco:");
+		System.out.println(esc1.getVotosCandidato(VB));
+		System.out.println(esc1.getVotosCandidato(VB));
+		System.out.println(esc1.getVotosCandidato(VB));
 		
 		//POR BARRIO:
-		
+		System.out.println("POR MESA CFK:");
 		System.out.println(b1.getVotosCandidato(CFK));
+		System.out.println("POR MESA MLadronM:");
 		System.out.println(l1.getVotosCandidato(MM));
+		System.out.println("POR MESA Voto en Blanco:");
+		System.out.println(b1.getVotosCandidato(VB));
 
 		//POR LOCALIDAD:
-		
+		System.out.println("POR LOCALIDAD CFK:");
 		System.out.println(l1.getVotosCandidato(CFK));
+		System.out.println("POR LOCALIDAD MLadronM:");
 		System.out.println(l1.getVotosCandidato(MM));
-		
+		System.out.println("POR LOCALIDAD Voto en Blanco:");
+		System.out.println(l1.getVotosCandidato(VB));
 	}
 
 }
